@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACM-Groupe — Excellence Technique en Hauteur &amp; au Sol</title>
+  <meta name="description" content="ACM-Groupe : Travaux sur cordes, Rénovation bâtiment et Formation SST en Île-de-France. Expert sécurité, technicité et prévention des risques." />
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MDK4LK2F');</script>
+  <!-- End Google Tag Manager -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --navy:  #1A2B4A;
+      --orange:#E8730A;
+      --green: #2D7A4F;
+      --lgrey: #F4F4F4;
+    }
+
+    /* Custom colors via CSS vars */
+    .bg-navy  { background-color: var(--navy);  }
+    .bg-orange{ background-color: var(--orange); }
+    .bg-green { background-color: var(--green);  }
+    .text-navy  { color: var(--navy);  }
+    .text-orange{ color: var(--orange); }
+    .text-green { color: var(--green);  }
+    .border-orange { border-color: var(--orange); }
+    .border-navy   { border-color: var(--navy);   }
+    .border-green  { border-color: var(--green);  }
+
+    /* Hero gradient overlay */
+    .hero-bg {
+      background: linear-gradient(135deg, var(--navy) 0%, #0f1e33 60%, #1a3a2a 100%);
+    }
+
+    /* Rope animation */
+    .rope-line {
+      animation: ropePulse 3s ease-in-out infinite;
+    }
+    @keyframes ropePulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    /* Card hover */
+    .expertise-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .expertise-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.13);
+    }
+
+    /* Pillar accent bar */
+    .pillar-accent {
+      height: 4px;
+      border-radius: 2px;
+      width: 56px;
+    }
+
+    /* Stats counter */
+    .stat-num {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    /* Approach timeline */
+    .step-connector::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -50%;
+      width: 100%;
+      height: 2px;
+      background: var(--orange);
+      opacity: 0.3;
+    }
+
+    /* Form focus */
+    .acm-input:focus {
+      outline: 2px solid var(--orange);
+      outline-offset: 2px;
+    }
+
+    /* Nav scroll shadow */
+    .nav-scrolled {
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Mobile menu */
+    #mobile-menu { transition: max-height 0.3s ease, opacity 0.3s ease; }
+
+    /* Section title underline */
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 56px;
+      height: 4px;
+      background: var(--orange);
+      border-radius: 2px;
+      margin: 16px auto 0;
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: var(--navy); border-radius: 3px; }
+  </style>
+</head>
+<body class="font-sans antialiased" style="color:#222;">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDK4LK2F"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-navy transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <a href="#hero" class="flex-shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 115" width="160" height="38" aria-label="ACM-Groupe">
+          <defs><mask id="nav-ring">
+            <ellipse cx="45" cy="57" rx="40" ry="52" fill="white"/>
+            <ellipse cx="45" cy="57" rx="26" ry="35" fill="black"/>
+            <rect x="0" y="42" width="32" height="30" fill="black"/>
+          </mask></defs>
+          <line x1="45" y1="0" x2="45" y2="115" stroke="#E8730A" stroke-width="6" stroke-linecap="round"/>
+          <rect x="0" y="0" width="88" height="115" mask="url(#nav-ring)" fill="#FFFFFF"/>
+          <rect x="3" y="44" width="7" height="26" rx="3.5" fill="#E8730A"/>
+          <path d="M4,44 C0,51 0,69 4,73" fill="none" stroke="#E8730A" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="45" cy="57" r="7" fill="#E8730A"/>
+          <text x="106" y="64" font-family="'Arial Black',Arial,sans-serif" font-size="52" font-weight="900" letter-spacing="4" fill="#FFFFFF">ACM</text>
+          <line x1="106" y1="76" x2="360" y2="76" stroke="#E8730A" stroke-width="2"/>
+          <text x="110" y="95" font-family="Arial,sans-serif" font-size="18" letter-spacing="13" fill="#E8730A">GROUPE</text>
+        </svg>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#expertises" class="text-gray-300 hover:text-white text-sm font-medium transition-colors">Nos Expertises</a>
+        <a href="#approche" class="text-gray-300 hover:text-white text-sm font-medium transition-colors">Notre Approche</a>
+        <a href="#contact" class="text-gray-300 hover:text-white text-sm font-medium transition-colors">Contact</a>
+        <a href="#contact" class="bg-orange text-white px-5 py-2 rounded text-sm font-semibold hover:opacity-90 transition-opacity">
+          Demander un devis
+        </a>
+      </div>
+
+      <!-- Mobile burger -->
+      <button id="burger" class="md:hidden text-white p-2" aria-label="Menu">
+        <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0 opacity-0">
+      <div class="py-3 space-y-1 border-t border-white border-opacity-10">
+        <a href="#expertises" class="block px-3 py-2 text-gray-300 hover:text-white text-sm">Nos Expertises</a>
+        <a href="#approche" class="block px-3 py-2 text-gray-300 hover:text-white text-sm">Notre Approche</a>
+        <a href="#contact" class="block px-3 py-2 text-gray-300 hover:text-white text-sm">Contact</a>
+        <div class="px-3 py-2">
+          <a href="#contact" class="block bg-orange text-white text-center py-2 rounded text-sm font-semibold">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════ -->
+<section id="hero" class="hero-bg min-h-screen flex flex-col justify-center relative overflow-hidden pt-16">
+
+  <!-- Background texture — rope lines -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="opacity-5">
+      <defs>
+        <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#E8730A" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)"/>
+    </svg>
+  </div>
+
+  <!-- Decorative rope -->
+  <div class="absolute right-8 top-0 bottom-0 hidden lg:flex flex-col items-center pointer-events-none" aria-hidden="true">
+    <div class="rope-line w-1 flex-1 rounded-full" style="background: linear-gradient(to bottom, transparent, #E8730A 20%, #E8730A 80%, transparent); opacity:0.25;"></div>
+    <div class="w-8 h-8 rounded-full border-4 border-orange flex items-center justify-center my-4" style="border-color:#E8730A; opacity:0.4;">
+      <div class="w-3 h-3 rounded-full bg-orange" style="background:#E8730A;"></div>
+    </div>
+    <div class="rope-line w-1 flex-1 rounded-full" style="background: linear-gradient(to bottom, #E8730A, transparent); opacity:0.25;"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="max-w-3xl">
+
+      <!-- Badge -->
+      <div class="inline-flex items-center space-x-2 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-full px-4 py-1.5 mb-8">
+        <div class="w-2 h-2 rounded-full bg-orange" style="background:#E8730A;"></div>
+        <span class="text-white text-xs font-medium tracking-widest uppercase">Île-de-France · Clichy 92110</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+        L'Excellence Technique<br/>
+        <span class="text-orange" style="color:#E8730A;">en Hauteur</span>
+        <span class="text-white"> &amp; au Sol</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-gray-300 text-lg sm:text-xl leading-relaxed mb-10 max-w-xl">
+        Du travail sur cordes à la formation SST, ACM-Groupe réunit sous une seule marque
+        <strong class="text-white">trois expertises complémentaires</strong> — pilotées par les mêmes exigences
+        de sécurité et de performance.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap gap-4">
+        <a href="#expertises"
+           class="bg-orange text-white px-8 py-3.5 rounded font-bold text-sm tracking-wide hover:opacity-90 transition-opacity"
+           style="background:#E8730A;">
+          Découvrir nos solutions &nbsp;→
+        </a>
+        <a href="#contact"
+           class="border border-white border-opacity-40 text-white px-8 py-3.5 rounded font-bold text-sm tracking-wide hover:bg-white hover:bg-opacity-10 transition-colors">
+          Demander un devis
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats strip -->
+  <div class="absolute bottom-0 left-0 right-0 bg-white bg-opacity-5 border-t border-white border-opacity-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="stat-num text-orange" style="color:#E8730A;">3</div>
+          <div class="text-gray-400 text-xs uppercase tracking-wider mt-1">Expertises réunies</div>
+        </div>
+        <div>
+          <div class="stat-num text-white">IDF</div>
+          <div class="text-gray-400 text-xs uppercase tracking-wider mt-1">Zone d'intervention</div>
+        </div>
+        <div>
+          <div class="stat-num text-orange" style="color:#E8730A;">OPCO</div>
+          <div class="text-gray-400 text-xs uppercase tracking-wider mt-1">Via OF partenaire Qualiopi</div>
+        </div>
+        <div>
+          <div class="stat-num text-white">14h</div>
+          <div class="text-gray-400 text-xs uppercase tracking-wider mt-1">Formation complète</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     NOS EXPERTISES
+══════════════════════════════════════════════════════════ -->
+<section id="expertises" class="py-24" style="background:#F8F9FC;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Title -->
+    <div class="text-center mb-16">
+      <p class="text-orange text-xs font-bold tracking-widest uppercase mb-3" style="color:#E8730A;">Ce que nous faisons</p>
+      <h2 class="section-title text-3xl sm:text-4xl font-black text-navy" style="color:#1A2B4A;">Nos Expertises</h2>
+    </div>
+
+    <!-- 3 Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Card 1 : Travaux Cordistes -->
+      <div class="expertise-card bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
+        <!-- Top accent -->
+        <div class="h-1.5" style="background:#E8730A;"></div>
+        <!-- Icon area -->
+        <div class="p-8 pb-0">
+          <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style="background:#FEF0E2;">
+            <!-- Rope/Carabiner SVG icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="36" height="36" fill="none" aria-hidden="true">
+              <line x1="32" y1="4" x2="32" y2="60" stroke="#E8730A" stroke-width="4" stroke-linecap="round"/>
+              <ellipse cx="32" cy="30" rx="14" ry="20" stroke="#1A2B4A" stroke-width="3.5" fill="none"/>
+              <ellipse cx="32" cy="30" rx="7" ry="12" stroke="#F8F9FC" stroke-width="3" fill="#F8F9FC"/>
+              <rect x="19" y="22" width="5" height="16" rx="2.5" fill="#E8730A"/>
+              <circle cx="32" cy="30" r="4" fill="#E8730A"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-black text-navy mb-3" style="color:#1A2B4A;">Travaux sur Cordes</h3>
+          <div class="pillar-accent mb-5" style="background:#E8730A;"></div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Accès difficiles, façades, toitures, ouvrages d'art. Nos techniciens cordistes interviennent
+            là où les échafaudages ne passent pas — avec les mêmes standards de qualité et de sécurité
+            qu'au sol.
+          </p>
+        </div>
+        <div class="p-8 pt-6 mt-auto">
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#E8730A;"></span>
+              Inspection &amp; maintenance en hauteur
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#E8730A;"></span>
+              Étanchéité, nettoyage, petits travaux
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#E8730A;"></span>
+              Conformité PPSPS &amp; plans de prévention
+            </li>
+          </ul>
+          <a href="#contact" class="block text-center py-2.5 rounded font-semibold text-sm transition-colors border-2"
+             style="border-color:#E8730A; color:#E8730A;"
+             onmouseover="this.style.background='#E8730A'; this.style.color='#fff';"
+             onmouseout="this.style.background='transparent'; this.style.color='#E8730A';">
+            Demander une intervention
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 : Rénovation -->
+      <div class="expertise-card bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
+        <div class="h-1.5" style="background:#1A2B4A;"></div>
+        <div class="p-8 pb-0">
+          <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style="background:#E8EEF5;">
+            <!-- Building/Tools SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="36" height="36" fill="none" aria-hidden="true">
+              <rect x="8" y="28" width="48" height="32" rx="2" stroke="#1A2B4A" stroke-width="3" fill="none"/>
+              <polygon points="4,30 32,8 60,30" stroke="#1A2B4A" stroke-width="3" stroke-linejoin="round" fill="none"/>
+              <rect x="24" y="40" width="16" height="20" rx="1" fill="#1A2B4A" opacity="0.15" stroke="#1A2B4A" stroke-width="2"/>
+              <rect x="14" y="36" width="10" height="10" rx="1" stroke="#E8730A" stroke-width="2" fill="none"/>
+              <rect x="40" y="36" width="10" height="10" rx="1" stroke="#E8730A" stroke-width="2" fill="none"/>
+              <line x1="32" y1="8" x2="32" y2="6" stroke="#E8730A" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="32" cy="5" r="2" fill="#E8730A"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-black text-navy mb-3" style="color:#1A2B4A;">Rénovation Bâtiment</h3>
+          <div class="pillar-accent mb-5" style="background:#1A2B4A;"></div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Intérieur comme extérieur, nos équipes prennent en charge l'ensemble du projet de rénovation.
+            Technicité, délais maîtrisés et finitions soignées — pour des locaux professionnels et des
+            résidences exigeantes.
+          </p>
+        </div>
+        <div class="p-8 pt-6 mt-auto">
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#1A2B4A;"></span>
+              Ravalement de façade &amp; isolation
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#1A2B4A;"></span>
+              Aménagement intérieur (cloisons, revêtements)
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#1A2B4A;"></span>
+              Gestion de chantier clé en main
+            </li>
+          </ul>
+          <a href="#contact" class="block text-center py-2.5 rounded font-semibold text-sm transition-colors border-2"
+             style="border-color:#1A2B4A; color:#1A2B4A;"
+             onmouseover="this.style.background='#1A2B4A'; this.style.color='#fff';"
+             onmouseout="this.style.background='transparent'; this.style.color='#1A2B4A';">
+            Obtenir un devis chantier
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3 : Formation -->
+      <div class="expertise-card bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
+        <div class="h-1.5" style="background:#2D7A4F;"></div>
+        <div class="p-8 pb-0">
+          <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style="background:#EDF5F1;">
+            <!-- Shield/Graduation SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="36" height="36" fill="none" aria-hidden="true">
+              <path d="M32 6 L54 16 L54 34 C54 46 44 56 32 60 C20 56 10 46 10 34 L10 16 Z"
+                    stroke="#2D7A4F" stroke-width="3" stroke-linejoin="round" fill="none"/>
+              <path d="M22 32 L29 39 L42 26" stroke="#2D7A4F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="32" cy="18" r="5" stroke="#E8730A" stroke-width="2.5" fill="none"/>
+              <line x1="32" y1="13" x2="32" y2="10" stroke="#E8730A" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-black mb-3" style="color:#2D7A4F;">Formation & Prévention</h3>
+          <div class="pillar-accent mb-5" style="background:#2D7A4F;"></div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Optimisation du Capital Humain &amp; Prévention des Risques — programme 2 jours certifié,
+            finançable OPCO via OF partenaire Qualiopi. Stress physiologique, SST, EPI et protocoles
+            terrain applicables dès le lendemain de la formation.
+          </p>
+        </div>
+        <div class="p-8 pt-6 mt-auto">
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#2D7A4F;"></span>
+              Gestion du stress &amp; protocoles respiratoires
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#2D7A4F;"></span>
+              SST, EPI, Prévention L4121-1
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#2D7A4F;"></span>
+              Via OF certifié Qualiopi — prise en charge OPCO
+            </li>
+          </ul>
+          <a href="#contact" class="block text-center py-2.5 rounded font-semibold text-sm transition-colors border-2"
+             style="border-color:#2D7A4F; color:#2D7A4F;"
+             onmouseover="this.style.background='#2D7A4F'; this.style.color='#fff';"
+             onmouseout="this.style.background='transparent'; this.style.color='#2D7A4F';">
+            En savoir plus sur la formation
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     APPROCHE ACM
+══════════════════════════════════════════════════════════ -->
+<section id="approche" class="py-24 bg-navy" style="background:#1A2B4A;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left : texte -->
+      <div>
+        <p class="text-orange text-xs font-bold tracking-widest uppercase mb-3" style="color:#E8730A;">Notre différence</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-white mb-6">
+          Pourquoi réunir<br/>
+          <span style="color:#E8730A;">trois métiers</span> sous une seule marque ?
+        </h2>
+        <p class="text-gray-300 leading-relaxed mb-8">
+          Parce que la sécurité et la technicité ne sont pas des options qui s'ajoutent
+          après coup — elles se construisent en amont, dans la culture d'équipe, la formation
+          continue et la rigueur de chaque geste.
+        </p>
+        <p class="text-gray-300 leading-relaxed mb-10">
+          ACM-Groupe est né de cette conviction : un cordiste formé à la gestion du stress
+          physiologique prend de meilleures décisions à 40 mètres. Un chef de chantier qui maîtrise
+          les EPI supervise mieux une rénovation sensible. <strong class="text-white">La compétence
+          transversale protège tout le monde.</strong>
+        </p>
+
+        <!-- 3 pillars short -->
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center font-black text-white text-sm" style="background:#E8730A;">1</div>
+            <div>
+              <div class="text-white font-bold text-sm">Maîtrise technique totale</div>
+              <div class="text-gray-400 text-sm">Du geste cordiste à la finition intérieure, un seul référentiel qualité.</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center font-black text-white text-sm" style="background:#E8730A;">2</div>
+            <div>
+              <div class="text-white font-bold text-sm">Culture sécurité intégrée</div>
+              <div class="text-gray-400 text-sm">Nos protocoles terrain sont issus directement de nos formations SST.</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center font-black text-white text-sm" style="background:#E8730A;">3</div>
+            <div>
+              <div class="text-white font-bold text-sm">Interlocuteur unique</div>
+              <div class="text-gray-400 text-sm">Un seul contact pour vos besoins travaux ET formation — gain de temps, cohérence de projet.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right : visual diagram -->
+      <div class="relative flex items-center justify-center">
+        <div class="relative w-72 h-72 sm:w-80 sm:h-80">
+
+          <!-- Center circle -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-28 h-28 rounded-full flex flex-col items-center justify-center text-center z-10 shadow-2xl" style="background:#E8730A;">
+              <div class="text-white font-black text-sm leading-tight">ACM<br/>GROUPE</div>
+              <div class="text-white text-opacity-80 text-xs mt-1">Excellence</div>
+            </div>
+          </div>
+
+          <!-- Ring -->
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="160" cy="160" r="140" stroke="rgba(232,115,10,0.2)" stroke-width="1" stroke-dasharray="6 6"/>
+            <circle cx="160" cy="160" r="100" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          </svg>
+
+          <!-- Pillar bubbles -->
+          <!-- Top -->
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 w-24 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl p-3 text-center">
+            <div class="text-orange text-xs font-bold uppercase tracking-wide" style="color:#E8730A;">Cordistes</div>
+            <div class="text-white text-xs opacity-70 mt-0.5">Hauteur &amp; accès</div>
+          </div>
+          <!-- Bottom left -->
+          <div class="absolute bottom-4 left-0 w-24 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl p-3 text-center">
+            <div class="text-white text-xs font-bold uppercase tracking-wide opacity-90">Rénovation</div>
+            <div class="text-white text-xs opacity-70 mt-0.5">Bâtiment</div>
+          </div>
+          <!-- Bottom right -->
+          <div class="absolute bottom-4 right-0 w-24 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl p-3 text-center">
+            <div class="text-xs font-bold uppercase tracking-wide" style="color:#2D7A4F;">Formation</div>
+            <div class="text-white text-xs opacity-70 mt-0.5">Capital humain</div>
+          </div>
+
+          <!-- Connecting lines -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 320 320" fill="none">
+            <line x1="160" y1="160" x2="160" y2="50" stroke="rgba(232,115,10,0.4)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="160" y1="160" x2="55"  y2="255" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="160" y1="160" x2="265" y2="255" stroke="rgba(45,122,79,0.4)"  stroke-width="1.5" stroke-dasharray="4 4"/>
+          </svg>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     BANDEAU CONFIANCE
+══════════════════════════════════════════════════════════ -->
+<div class="py-10 border-y border-gray-200" style="background:#fff;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+      <div class="flex flex-col items-center">
+        <svg class="w-8 h-8 mb-2" viewBox="0 0 32 32" fill="none"><path d="M16 3 L29 9 L29 19 C29 25 23 29 16 32 C9 29 3 25 3 19 L3 9 Z" stroke="#2D7A4F" stroke-width="2" fill="none"/><path d="M11 16 L14.5 19.5 L21 13" stroke="#2D7A4F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="font-bold text-sm" style="color:#1A2B4A;">Financement OPCO</div>
+        <div class="text-gray-500 text-xs">Via OF partenaire Qualiopi</div>
+      </div>
+      <div class="flex flex-col items-center">
+        <svg class="w-8 h-8 mb-2" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#E8730A" stroke-width="2"/><text x="16" y="20" text-anchor="middle" font-size="10" font-weight="bold" fill="#E8730A">EPI</text></svg>
+        <div class="font-bold text-sm" style="color:#1A2B4A;">EPI &amp; SST</div>
+        <div class="text-gray-500 text-xs">Standards L4121-1</div>
+      </div>
+      <div class="flex flex-col items-center">
+        <svg class="w-8 h-8 mb-2" viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="18" rx="2" stroke="#1A2B4A" stroke-width="2"/><path d="M4 14 L28 14" stroke="#1A2B4A" stroke-width="1.5"/><circle cx="16" cy="4" r="2" fill="#E8730A"/><line x1="16" y1="6" x2="16" y2="8" stroke="#E8730A" stroke-width="1.5"/></svg>
+        <div class="font-bold text-sm" style="color:#1A2B4A;">Devis rapide</div>
+        <div class="text-gray-500 text-xs">Réponse sous 48h</div>
+      </div>
+      <div class="flex flex-col items-center">
+        <svg class="w-8 h-8 mb-2" viewBox="0 0 32 32" fill="none"><path d="M6 26 L6 10 L16 4 L26 10 L26 26 Z" stroke="#1A2B4A" stroke-width="2" fill="none"/><rect x="12" y="18" width="8" height="8" fill="#E8730A" opacity="0.3" stroke="#E8730A" stroke-width="1.5"/></svg>
+        <div class="font-bold text-sm" style="color:#1A2B4A;">Île-de-France</div>
+        <div class="text-gray-500 text-xs">Basé à Clichy (92)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════════════════════ -->
+<section id="contact" class="py-24" style="background:#F8F9FC;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Left : info -->
+      <div>
+        <p class="text-orange text-xs font-bold tracking-widest uppercase mb-3" style="color:#E8730A;">Parlons de votre projet</p>
+        <h2 class="text-3xl sm:text-4xl font-black mb-6" style="color:#1A2B4A;">Contactez-nous</h2>
+        <p class="text-gray-600 leading-relaxed mb-10">
+          Que vous ayez un chantier en hauteur, un projet de rénovation ou un besoin de
+          formation pour vos équipes — ACM-Groupe vous répond sous <strong>48 heures ouvrées</strong>
+          avec une proposition adaptée à votre contexte.
+        </p>
+
+        <!-- Contact cards -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#FEF0E2;">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" stroke="#E8730A" stroke-width="1.5"/><path d="M3 9l9 6 9-6" stroke="#E8730A" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="text-xs text-gray-400 font-medium">Email</div>
+              <div class="font-semibold text-sm" style="color:#1A2B4A;">contact@acm-groupe.pro</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#FEF0E2;">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z" stroke="#E8730A" stroke-width="1.5"/></svg>
+            </div>
+            <div>
+              <div class="text-xs text-gray-400 font-medium">Adresse</div>
+              <div class="font-semibold text-sm" style="color:#1A2B4A;">Clichy (92110) — Île-de-France</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right : form -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 sm:p-10">
+        <h3 class="text-xl font-black mb-6" style="color:#1A2B4A;">Votre demande</h3>
+
+        <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">Nom *</label>
+              <input type="text" required placeholder="Dupont"
+                     class="acm-input w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all"
+                     style="background:#FAFAFA;" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">Prénom *</label>
+              <input type="text" required placeholder="Marie"
+                     class="acm-input w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all"
+                     style="background:#FAFAFA;" />
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">Entreprise</label>
+            <input type="text" placeholder="Votre société"
+                   class="acm-input w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all"
+                   style="background:#FAFAFA;" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">Email professionnel *</label>
+            <input type="email" required placeholder="marie.dupont@societe.fr"
+                   class="acm-input w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all"
+                   style="background:#FAFAFA;" />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">Objet de la demande *</label>
+            <div class="relative">
+              <select required id="objet"
+                      class="acm-input w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-700 transition-all appearance-none cursor-pointer"
+                      style="background:#FAFAFA;"
+                      onchange="updateSelectColor(this)">
+                <option value="" disabled selected class="text-gray-400">Sélectionnez un objet…</option>
+                <option value="cordiste">🔶 Travaux Cordistes</option>
+                <option value="renovation">🏗️ Projet Rénovation</option>
+                <option value="formation">🎓 Formation</option>
+              </select>
+              <div class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
+                <svg class="w-4 h-4 text-gray-400" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">Votre message *</label>
+            <textarea required rows="4" placeholder="Décrivez votre projet, vos contraintes, ou le nombre de participants pour une formation…"
+                      class="acm-input w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 transition-all resize-none"
+                      style="background:#FAFAFA;"></textarea>
+          </div>
+
+          <!-- Indicator strip -->
+          <div id="objet-indicator" class="h-1 w-0 rounded-full mb-6 transition-all duration-500" style="background:#E8730A;"></div>
+
+          <button type="submit"
+                  class="w-full py-3.5 rounded-lg font-bold text-sm text-white transition-all"
+                  style="background:#1A2B4A;"
+                  onmouseover="this.style.background='#E8730A';"
+                  onmouseout="this.style.background='#1A2B4A';">
+            Envoyer ma demande →
+          </button>
+
+          <p class="text-center text-xs text-gray-400 mt-4">Réponse garantie sous 48h ouvrées · Zéro démarchage commercial</p>
+        </form>
+
+        <!-- Success message (hidden) -->
+        <div id="form-success" class="hidden text-center py-8">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background:#EDF5F1;">
+            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none"><path d="M8 16 L13 21 L24 10" stroke="#2D7A4F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4 class="font-black text-lg mb-2" style="color:#1A2B4A;">Message envoyé !</h4>
+          <p class="text-gray-500 text-sm">Nous vous répondrons sous 48h ouvrées.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer class="bg-navy py-12" style="background:#0f1e33;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white border-opacity-10">
+
+      <!-- Col 1 : Logo + desc -->
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 115" width="140" height="33" class="mb-4" aria-label="ACM-Groupe">
+          <defs><mask id="ft-ring">
+            <ellipse cx="45" cy="57" rx="40" ry="52" fill="white"/>
+            <ellipse cx="45" cy="57" rx="26" ry="35" fill="black"/>
+            <rect x="0" y="42" width="32" height="30" fill="black"/>
+          </mask></defs>
+          <line x1="45" y1="0" x2="45" y2="115" stroke="#E8730A" stroke-width="6" stroke-linecap="round"/>
+          <rect x="0" y="0" width="88" height="115" mask="url(#ft-ring)" fill="#FFFFFF"/>
+          <rect x="3" y="44" width="7" height="26" rx="3.5" fill="#E8730A"/>
+          <path d="M4,44 C0,51 0,69 4,73" fill="none" stroke="#E8730A" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="45" cy="57" r="7" fill="#E8730A"/>
+          <text x="106" y="64" font-family="'Arial Black',Arial,sans-serif" font-size="52" font-weight="900" letter-spacing="4" fill="#FFFFFF">ACM</text>
+          <line x1="106" y1="76" x2="360" y2="76" stroke="#E8730A" stroke-width="2"/>
+          <text x="110" y="95" font-family="Arial,sans-serif" font-size="18" letter-spacing="13" fill="#E8730A">GROUPE</text>
+        </svg>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Excellence technique en hauteur et au sol.<br/>
+          Clichy (92110) — Île-de-France
+        </p>
+      </div>
+
+      <!-- Col 2 : Expertises -->
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4 uppercase tracking-wider">Nos expertises</h4>
+        <ul class="space-y-2">
+          <li><a href="#expertises" class="text-gray-400 hover:text-white text-sm transition-colors">Travaux sur Cordes</a></li>
+          <li><a href="#expertises" class="text-gray-400 hover:text-white text-sm transition-colors">Rénovation Bâtiment</a></li>
+          <li><a href="#expertises" class="text-gray-400 hover:text-white text-sm transition-colors">Formation &amp; Prévention</a></li>
+          <li><a href="#approche"   class="text-gray-400 hover:text-white text-sm transition-colors">Notre Approche</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3 : Contact rapide -->
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4 uppercase tracking-wider">Contact rapide</h4>
+        <div class="space-y-2 text-sm text-gray-400">
+          <div>contact@acm-groupe.pro</div>
+          <div class="pt-2">
+            <a href="#contact"
+               class="inline-block px-5 py-2 rounded font-semibold text-white text-xs transition-colors"
+               style="background:#E8730A;"
+               onmouseover="this.style.background='#cf6409';"
+               onmouseout="this.style.background='#E8730A';">
+              Demander un devis
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-gray-500 text-xs">© 2026 ACM-Groupe. Tous droits réservés.</p>
+      <p class="text-gray-500 text-xs text-center">
+        ACM-Groupe est la marque commerciale exploitée par la société Vocation-Cordes — SAS au capital de 1 000 € — SIREN 991 121 088 — 34 rue Georges Boisseau, 92110 Clichy
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════════════ -->
+<script>
+  // ── Navbar scroll effect ────────────────────────────────
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add('nav-scrolled');
+      navbar.style.background = 'rgba(26,43,74,0.97)';
+      navbar.style.backdropFilter = 'blur(8px)';
+    } else {
+      navbar.classList.remove('nav-scrolled');
+      navbar.style.background = '#1A2B4A';
+      navbar.style.backdropFilter = 'none';
+    }
+  });
+
+  // ── Mobile menu ─────────────────────────────────────────
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let menuOpen = false;
+
+  burger.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      mobileMenu.style.maxHeight = '300px';
+      mobileMenu.style.opacity = '1';
+    } else {
+      mobileMenu.style.maxHeight = '0';
+      mobileMenu.style.opacity = '0';
+    }
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menuOpen = false;
+      mobileMenu.style.maxHeight = '0';
+      mobileMenu.style.opacity = '0';
+    });
+  });
+
+  // ── Select color indicator ──────────────────────────────
+  const colors = {
+    cordiste: '#E8730A',
+    renovation: '#1A2B4A',
+    formation: '#2D7A4F',
+    '': '#E8730A',
+  };
+
+  function updateSelectColor(sel) {
+    const indicator = document.getElementById('objet-indicator');
+    const c = colors[sel.value] || '#E8730A';
+    indicator.style.background = c;
+    indicator.style.width = '100%';
+  }
+
+  // ── Form submit ─────────────────────────────────────────
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    form.style.display = 'none';
+    success.classList.remove('hidden');
+  }
+
+  // ── Scroll animations ───────────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.expertise-card, .section-title').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
