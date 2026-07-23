@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 115" width="480" height="115">
+  <title>ACM-Groupe — Logo couleur horizontal</title>
+  <desc>Logo ACM-Groupe avec icone carabiner, version couleur sur fond clair</desc>
+  <defs>
+    <mask id="ring">
+      <ellipse cx="45" cy="57" rx="40" ry="52" fill="white"/>
+      <ellipse cx="45" cy="57" rx="26" ry="35" fill="black"/>
+      <rect x="0" y="42" width="32" height="30" fill="black"/>
+    </mask>
+  </defs>
+  <!-- Rope -->
+  <line x1="45" y1="0" x2="45" y2="115" stroke="#E8730A" stroke-width="6" stroke-linecap="round"/>
+  <!-- Carabiner ring -->
+  <rect x="0" y="0" width="88" height="115" mask="url(#ring)" fill="#1A2B4A"/>
+  <!-- Gate bar -->
+  <rect x="3" y="44" width="7" height="26" rx="3.5" fill="#E8730A"/>
+  <!-- Gate lever -->
+  <path d="M4,44 C0,51 0,69 4,73" fill="none" stroke="#E8730A" stroke-width="3" stroke-linecap="round"/>
+  <!-- Connection point -->
+  <circle cx="45" cy="57" r="7" fill="#E8730A"/>
+  <!-- Wordmark: ACM -->
+  <text x="106" y="64" font-family="'Arial Black',Arial,Impact,sans-serif" font-size="52" font-weight="900" letter-spacing="4" fill="#1A2B4A">ACM</text>
+  <!-- Separator -->
+  <line x1="106" y1="76" x2="360" y2="76" stroke="#E8730A" stroke-width="2"/>
+  <!-- GROUPE -->
+  <text x="110" y="95" font-family="Arial,sans-serif" font-size="18" font-weight="400" letter-spacing="13" fill="#E8730A">GROUPE</text>
+  <!-- Tagline -->
+  <text x="109" y="111" font-family="Arial,sans-serif" font-size="10" letter-spacing="2" fill="#888888">TRAVAUX SUR CORDES  ·  PREVENTION DES RISQUES</text>
+</svg>
