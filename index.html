@@ -485,7 +485,32 @@ footer a:hover{color:var(--blanc)}
 .cta-guarantee{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.55);font-size:.8rem}
 .cta-guarantee svg{width:15px;height:15px;stroke:var(--accent);fill:none;stroke-width:2.2;flex-shrink:0}
 </style>
-<script>window.addEventListener("load",function(){setTimeout(function(){document.querySelectorAll(".reveal:not(.in)").forEach(function(e){e.classList.add("in");});},1800);});</script>
+<script>
+window.addEventListener("load",function(){
+  setTimeout(function(){document.querySelectorAll(".reveal:not(.in)").forEach(function(e){e.classList.add("in");});},1800);
+});
+// Counter animation
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var b = entry.target.querySelector('b[data-count]');
+      if(!b || b._counted) return;
+      b._counted = true;
+      var target = parseInt(b.getAttribute('data-count'), 10);
+      var duration = 900, start = null;
+      function step(ts){
+        if(!start) start = ts;
+        var p = Math.min((ts - start) / duration, 1);
+        b.textContent = Math.round(p * target);
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, {threshold: 0.3});
+  document.querySelectorAll('.kpi').forEach(function(el){ obs.observe(el); });
+})();
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -626,7 +651,7 @@ footer a:hover{color:var(--blanc)}
 
 <!-- ============ EXPERTISES ============ -->
 <section style="padding:0;border-top:1px solid var(--ligne)">
-  <img src="hero.png" loading="lazy" alt="Cordiste ACM Groupe en travaux sur cordes sur une facade vitree en Ile-de-France" style="width:100%;height:clamp(280px,42vw,580px);object-fit:cover;display:block">
+  <img src="chantier-acm-facade.png" loading="lazy" alt="Cordiste ACM Groupe en travaux sur cordes sur une façade en Île-de-France" style="width:100%;height:clamp(280px,42vw,580px);object-fit:cover;display:block">
 </section>
 <section id="expertises">
   <div class="wrap">
@@ -1298,25 +1323,4 @@ footer a:hover{color:var(--blanc)}
         <ul>
           <li><a href="biens-degrades-paris.html">Paris (75)</a></li>
           <li><a href="biens-degrades-saint-denis.html">Saint-Denis (93)</a></li>
-          <li><a href="biens-degrades-nanterre.html">Nanterre (92)</a></li>
-          <li><a href="biens-degrades-montreuil.html">Montreuil (93)</a></li>
-          <li><a href="biens-degrades-creteil.html">Créteil (94)</a></li>
-          <li><a href="biens-degrades-argenteuil.html">Argenteuil (95)</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+33652252403">06 52 25 24 03</a></li>
-          <li><a href="mailto:contact@acm-groupe.pro">contact@acm-groupe.pro</a></li>
-          <li>34 rue Georges Boisseau<br>92110 Clichy</li>
-        </ul>
-      </div>
-    </div>
-    <div class="legal">
-      <p>© 2026 ACM Groupe SAS — Tous droits réservés — <a href="mentions-legales.html">Mentions légales</a></p>
-    </div>
-  </div>
-</footer>
-</body>
-</html>
+          <li><a href="biens-degrades-nanterre.html">N
