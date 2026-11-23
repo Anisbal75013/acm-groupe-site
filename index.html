@@ -269,6 +269,22 @@ td.good::before{content:"✓ ";color:#2D9B5A;font-weight:800}
 .band .box{background:rgba(6,30,48,.75);border:1px solid rgba(255,255,255,.18);padding:28px;border-radius:var(--radius);display:grid;gap:10px}
 .band .box strong{font-family:var(--display);font-size:2.6rem;color:var(--orange);line-height:1}
 @media (max-width:860px){.band .wrap{grid-template-columns:1fr}}
+.band .sst{grid-column:1/-1;display:grid;gap:18px;margin-top:12px}
+.band .sst .lvl{margin-bottom:0}
+.band .sst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.band .sst article{background:rgba(6,30,48,.75);border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);padding:22px 24px;display:grid;gap:8px;align-content:start}
+.band .sst .k{font-family:var(--display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.85rem;color:var(--orange)}
+.band .sst h3{color:#fff;font-size:1.35rem}
+.band .sst .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px}
+.band .sst .foot p{max-width:68ch}
+@media (max-width:860px){.band .sst-grid{grid-template-columns:1fr}}
+
+/* Bandeau saisonnier (retiré automatiquement après sa date data-until) */
+.season{display:block;background:var(--orange);color:var(--navy-deep);text-decoration:none;font-weight:600}
+.season:hover{background:#FFAE3D}
+.season .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding-block:10px}
+.season b{font-family:var(--display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--navy-deep);color:#fff;padding:2px 8px;border-radius:2px}
+.season u{text-underline-offset:3px;font-weight:700}
 
 /* Zones */
 .zones{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
@@ -354,6 +370,9 @@ footer .legal{grid-column:1/-1;border-top:1px solid #163A55;padding-top:20px;fon
 </header>
 
 <main id="top">
+  <a class="season" href="#contact" data-until="2026-12-31">
+    <span class="wrap"><b>Avant l'hiver</b><span>Gouttières, chéneaux, façades, pigeons : créneaux disponibles en décembre.</span><u>Demander un passage →</u></span>
+  </a>
   <section class="hero" style="padding:0">
     <img src="img/hero.webp" alt="Cordiste ACM Groupe en descente sur une façade haussmannienne à Paris, au coucher du soleil">
     <div class="wrap">
@@ -540,6 +559,30 @@ footer .legal{grid-column:1/-1;border-top:1px solid #163A55;padding-top:20px;fon
         <span>De 6 à 15 participants · financement possible via l'OPCO de l'organisme partenaire</span>
         <a class="btn btn-o" href="#contact" style="justify-self:start;margin-top:8px">Demander le programme</a>
       </div>
+      <div class="sst" id="sst">
+        <div class="lvl"><b>SST</b> Formations réglementaires</div>
+        <div class="sst-grid">
+          <article>
+            <span class="k">Formation initiale · 14 h</span>
+            <h3>Sauveteur Secouriste du Travail</h3>
+            <p>Deux jours pour savoir protéger, examiner, faire alerter et secourir une victime, et contribuer à la prévention des risques dans l'entreprise. Certificat SST valable 24 mois.</p>
+          </article>
+          <article>
+            <span class="k">Recyclage · 7 h</span>
+            <h3>MAC SST</h3>
+            <p>Maintien et actualisation des compétences, tous les 24 mois, pour garder un certificat SST valide.</p>
+          </article>
+          <article>
+            <span class="k">Incendie · ½ journée</span>
+            <h3>EPI &amp; évacuation</h3>
+            <p>Manipulation des extincteurs sur feu réel maîtrisé, exercice d'évacuation, rôle des guide-files et serre-files.</p>
+          </article>
+        </div>
+        <div class="foot">
+          <p>Groupes de 4 à 10 stagiaires, sur votre site ou en salle à Gennevilliers (92). Formateur SST certifié INRS, certificats délivrés avec notre partenaire Genesis Évolution, organisme de formation habilité.</p>
+          <a class="btn btn-o" href="#contact" data-besoin="Formation">Demander un devis formation</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -675,6 +718,13 @@ footer .legal{grid-column:1/-1;border-top:1px solid #163A55;padding-top:20px;fon
     ok.innerHTML='<strong>Votre messagerie s\'ouvre avec la demande pré-remplie.</strong> Si rien ne s\'ouvre, envoyez le récapitulatif à contact@acm-groupe.pro ou appelez le 06 52 25 24 03.<br><button type="button" id="cp">Copier le récapitulatif</button>';
     document.getElementById('cp').onclick=function(){var b=this;navigator.clipboard.writeText(txt).then(function(){b.textContent='Copié'}).catch(function(){b.textContent='Copie impossible, sélectionnez le texte du formulaire'})};
   });
+
+  // Liens « devis formation » : pré-sélectionne le besoin dans le formulaire
+  [].forEach.call(document.querySelectorAll('a[data-besoin]'),function(a){a.addEventListener('click',function(){if(f&&f.besoin)f.besoin.value=a.getAttribute('data-besoin');});});
+
+  // Bandeaux saisonniers : retirés automatiquement après leur date de fin
+  var now=new Date();
+  [].forEach.call(document.querySelectorAll('[data-until]'),function(el){if(now>new Date(el.getAttribute('data-until')+'T23:59:59'))el.parentNode.removeChild(el);});
 })();
 </script>
 </body>
