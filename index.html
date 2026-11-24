@@ -345,6 +345,20 @@ footer a{text-decoration:none}
 footer .legal{grid-column:1/-1;border-top:1px solid #163A55;padding-top:20px;font-size:.82rem;color:#7B98AF}
 @media (max-width:980px){footer .wrap{grid-template-columns:1fr 1fr}}@media (max-width:560px){footer .wrap{grid-template-columns:1fr}}
 
+/* Vérificateur de devis (entrée stratégique) */
+.verif{background:var(--navy-deep);color:#fff;padding-block:clamp(44px,6vw,72px)}
+.verif .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:28px 48px;align-items:center}
+.verif .wrap>*{min-width:0}
+.verif .lvl{color:var(--orange)}
+.verif h2{color:#fff;font-size:clamp(2rem,4.4vw,3.2rem)}
+.verif p{color:#DCE7F0;margin-top:14px;max-width:58ch}
+.verif ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.verif li{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-left:3px solid var(--orange);border-radius:var(--radius);padding:12px 16px;color:#DCE7F0}
+.verif li b{color:#fff}
+.verif .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px;align-items:center}
+.verif .cta small{color:#9FB8CC}
+@media (max-width:860px){.verif .wrap{grid-template-columns:1fr}}
+
 .reveal{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.pre{transform:translateY(24px)}
 </style>
@@ -359,6 +373,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid #163A55;padding-top:20px;fon
       <a href="#expertises">Expertises</a>
       <a href="#realisations">Avant / Après</a>
       <a href="#services">Services</a>
+      <a href="verificateur-devis.html">Vérifier un devis</a>
       <a href="#methode">Méthode</a>
       <a href="#zones">Zones</a>
       <a href="#faq">FAQ</a>
@@ -498,6 +513,22 @@ footer .legal{grid-column:1/-1;border-top:1px solid #163A55;padding-top:20px;fon
     </div>
   </section>
 
+  <section class="verif" id="verifier-devis">
+    <div class="wrap">
+      <div>
+        <div class="lvl"><b>Gratuit</b> Vous avez déjà un devis ?</div>
+        <h2>Faites vérifier votre devis avant de signer</h2>
+        <p>Déposez le devis de façade, toiture, zinguerie, étanchéité ou purge que vous avez reçu : mentions obligatoires, assurance décennale, zones floues et coût de l’échafaudage sont passés en revue en moins d’une minute. Votre document reste dans votre navigateur.</p>
+        <div class="cta"><a class="btn btn-o" href="verificateur-devis.html">Vérifier mon devis</a><small>Sans inscription · contre-devis gratuit sous 48 h si vous le souhaitez</small></div>
+      </div>
+      <ul>
+        <li><b>Échafaudage ou nacelle facturés ?</b> L’outil isole leur coût et chiffre l’économie possible sur cordes.</li>
+        <li><b>« Divers », « si nécessaire », forfaits…</b> Les formulations qui ouvrent la porte aux suppléments sont repérées.</li>
+        <li><b>Questions prêtes à envoyer</b> à l’entreprise, et rapport PDF à joindre au dossier d’AG.</li>
+      </ul>
+    </div>
+  </section>
+
   <section id="methode"><span id="approche"></span>
     <div class="wrap">
       <div class="head reveal">
@@ -619,6 +650,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid #163A55;padding-top:20px;fon
         <div class="lvl"><b>Sol</b> Contact</div>
         <h2>Parlons de votre chantier</h2>
         <p style="margin-top:16px;color:#B9CCDC;max-width:44ch">Décrivez votre besoin, joignez l'adresse : nous revenons vers vous sous 48 heures ouvrées. Aucun démarchage commercial.</p>
+        <p style="margin-top:12px;color:#B9CCDC;max-width:44ch">Vous avez déjà un devis d'une autre entreprise ? <a href="verificateur-devis.html" style="color:var(--orange);font-weight:700">Faites-le vérifier gratuitement</a> et recevez un contre-devis comparatif.</p>
         <div class="direct">
           <div><small>Téléphone</small><a href="tel:+33652252403">06 52 25 24 03</a></div>
           <div><small>E-mail</small><span>contact@acm-groupe.pro</span></div>
@@ -645,6 +677,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid #163A55;padding-top:20px;fon
     <div><img src="img/logo_white.svg" alt="ACM Groupe"><p>Cordiste, travaux d'accès difficile et rénovation intérieure / extérieure en Île-de-France.</p></div>
     <div><h4>Expertises</h4><ul><li><a href="#services">Ravalement sur cordes</a></li><li><a href="#services">Purge &amp; urgences</a></li><li><a href="#services">Balcons &amp; bétons</a></li><li><a href="#services">Rénovation intérieure</a></li><li><a href="#formation">Formation prévention</a></li></ul></div>
     <div><h4>Guides &amp; pages</h4><ul>
+<li><a href="verificateur-devis.html"><strong>Vérificateur de devis gratuit</strong></a></li>
 <li><a href="securisation-facade-purge-balcon.html">Purge de façade &amp; balcons</a></li>
 <li><a href="depigeonnage-anti-pigeon.html">Dépigeonnage</a></li>
 <li><a href="pose-piques-anti-pigeons-idf.html">Pose de piques anti-pigeons</a></li>
