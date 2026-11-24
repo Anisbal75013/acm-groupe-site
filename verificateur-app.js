@@ -300,7 +300,7 @@
       carteAcces.hidden = false;
       $('#vd-acces-titre').textContent = a.type + ' facturé' + (a.accord || '') + (a.cout ? ' ' + fmtEur(a.cout) + ' HT' : '') + (a.part !== null && a.part !== undefined ? ' (' + a.part + ' % du devis)' : '');
       $('#vd-acces-msg').textContent = a.message;
-      $('#vd-acces-eco').innerHTML = a.economieMin ? 'Économie potentielle sur le poste accès : <strong>' + fmtEur(a.economieMin) + ' à ' + fmtEur(a.economieMax) + ' HT</strong><small>Ordre de grandeur indicatif, calculé sur 40 à 80 % du coût d’accès détecté. Seul un contre-devis après visite donne un prix ferme.</small>' : 'Le coût de l’accès n’est pas isolé dans le devis : demandez-le, puis comparez avec une intervention sur cordes.';
+      $('#vd-acces-eco').innerHTML = 'Le montant de ce poste ne suffit pas à conclure : demandez à l’entreprise un chiffrage en variante (échafaudage ou nacelle d’un côté, cordes de l’autre), après visite. Seul ce contre-devis permet de comparer.';
     } else carteAcces.hidden = true;
     if (a) {
       ha += '<p><strong>Moyen d’accès détecté : ' + esc(a.type) + '.</strong> ' + esc(a.message) + '</p>';
@@ -357,7 +357,7 @@
       if (r.acces && r.acces.alerte) {
         titre('Moyens d’accès');
         txt(r.acces.message);
-        if (r.acces.economieMin) txt('Économie potentielle indicative sur le poste accès : ' + fmtEur(r.acces.economieMin) + ' à ' + fmtEur(r.acces.economieMax) + ' HT (40 à 80 % du coût d’accès détecté, à confirmer par contre-devis).', { b: true });
+        txt('Demandez un chiffrage en variante (échafaudage ou nacelle, puis cordes) après visite : seul ce contre-devis permet de comparer les deux options.', { b: true });
       }
       titre('1. Mentions obligatoires et assurances');
       r.controles.forEach(function (c) { txt('[' + LIB_STATUT[c.statut] + '] ' + c.label, { b: true, c: c.statut === 'ok' ? [45, 155, 90] : c.statut === 'alerte' ? [184, 106, 0] : [190, 40, 40] }); txt(c.detail, { c: gris, x: M + 4, w: L - 4 }); y += 1; });

@@ -363,10 +363,6 @@
         a.alerte = true;
         a.niveau = (part !== null && part >= 0.15) || (!coutTrouve) ? 'forte' : 'moyenne';
         a.message = typeAcces + ' facturé' + accord + ' pour des travaux (' + postesTrouves.map(function (p) { return p.label.toLowerCase(); }).join(', ') + ') généralement réalisables sur cordes : pas de montage, pas de location à la semaine, pas d’emprise prolongée sur le trottoir, et une intervention souvent plus rapide.';
-        if (coutTrouve) {
-          a.economieMin = arrondi(coutAcces * 0.4 / 10) * 10;
-          a.economieMax = arrondi(coutAcces * 0.8 / 10) * 10;
-        }
       } else if (lourd) {
         a.niveau = 'info';
         a.message = 'Le devis comprend des travaux lourds (' + (T.match(RE_LOURD) || [''])[0] + ') qui peuvent justifier un échafaudage. Une partie des travaux (purges, reprises ponctuelles, zinguerie) peut néanmoins être réalisée sur cordes : demandez un chiffrage en variante.';
@@ -426,7 +422,7 @@
     var phr = [];
     phr.push('Devis' + (r.entreprise ? ' de ' + r.entreprise : '') + (totalHT ? ' de ' + fmtEur(totalHT) + ' HT' : (totalGeneral ? ' de ' + fmtEur(totalGeneral) + ' (HT/TTC non précisé)' : '')) + (r.postes.length ? ' portant sur : ' + r.postes.map(function (p) { return p.label.toLowerCase(); }).join(', ') : '') + '.');
     phr.push(manquants.length + ' mention(s) importante(s) manquante(s), ' + alertes.length + ' point(s) à vérifier, ' + r.flous.length + ' zone(s) floue(s), ' + r.omissions.length + ' oubli(s) fréquent(s).');
-    if (r.acces && r.acces.alerte) phr.push(r.acces.type + ' facturé' + (r.acces.accord || '') + (r.acces.cout ? ' ' + fmtEur(r.acces.cout) + ' HT' : '') + ' : intervention sur cordes à comparer' + (r.acces.economieMin ? ' (économie indicative ' + fmtEur(r.acces.economieMin) + ' à ' + fmtEur(r.acces.economieMax) + ' HT)' : '') + '.');
+    if (r.acces && r.acces.alerte) phr.push(r.acces.type + ' facturé' + (r.acces.accord || '') + (r.acces.cout ? ' ' + fmtEur(r.acces.cout) + ' HT' : '') + ' : moyen d’accès à comparer par contre-devis en variante.');
     r.resume = phr.join(' ');
     return r;
   }
